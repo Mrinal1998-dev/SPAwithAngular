@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      ul{
+        font-size: 16px;
+      }
+      .message{
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+<body ng-app="ShoppingListCheckOff">
+   <div class="container">
+     <div class="row">
+       <div class="col-xs-6" ng-controller="ToBuyController as buylist">
+         <h2>To Buy</h2>
+         <ul>
+           <li ng-repeat="item in buylist.items">Buy {{item.quantity}} {{item.name}}
+            <button ng-click="buylist.buyitem($index)">Bought</button>
+          </li>
+         </ul>
+         <div ng-if="buylist.message" class="message">{{buylist.message}}</div>
+       </div>
+       <div class="col-xs-6" ng-controller="AlreadyBoughtController as boughtlist">
+         <h2>Already Bought</h2>
+         <ul>
+          <li ng-repeat="item in boughtlist.items">Bought {{item.quantity}} {{item.name}}</li>
+        </ul>
+        <div ng-if="boughtlist.message" class="message">{{boughtlist.message}}</div>
+       </div>
+     </div>
+   </div>
+
+</body>
+</html>
