@@ -1,0 +1,21 @@
+ul{
+	list-style-type: none;
+}
+div.row{
+	text-align: center;
+}
+hr{
+    height: 1px;
+	background-color: darkblue;
+}
+div.error{
+	color: red;
+	font-size: 150%;
+	font-weight: bold;
+}
+span.load{
+	margin-left: 5px;
+	color: blue;
+	font-weight: 600;
+	font-size: 120%;
+}

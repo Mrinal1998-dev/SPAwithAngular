@@ -1,0 +1,12 @@
+<ul>
+	<li ng-repeat="item in itemsList">
+		<div class="row">
+			<div class="col-xs-3 col-md-2">{{$index+1}}.{{item.name}}</div>
+			<div class="col-xs-2 col-md-1">{{item.short_name}}</div>
+			<div class="col-xs-3 col-md-2">{{item.description}}</div>
+			<button class="col-xs-2 col-md-1" ng-click="onRemove({index:$index});">Dont want this one!</button>
+		 </div>
+		 <hr>
+	</li> 
+</ul>
+<div ng-if="message" class="error">Nothing Found</div>
