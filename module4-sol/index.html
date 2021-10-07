@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	  <title>Module 4 Coding Assignment</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body ng-app="MenuApp">
+		
+		<div class="container">
+		<h2>Davids Restaurant</h2>
+		<ui-view></ui-view>
+		</div>
+		
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-ui-router.min.js"></script>
+        
+        <script src="src/MenuApp/menuapp.module.js"></script>
+        <script src="src/data/data.module.js"></script>
+
+        <script src="src/routes.js"></script>
+
+        <script src="src/MenuApp/categories.component.js"></script>
+        <script src="src/MenuApp/items.component.js"></script>
+        <script src="src/MenuApp/categories.controller.js"></script>
+        <script src="src/MenuApp/items.controller.js"></script>
+        
+        <script src="src/data/menudata.service.js"></script>
+
+	</body>
+</html>
