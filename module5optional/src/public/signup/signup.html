@@ -1,0 +1,49 @@
+<div class="container">
+	<h2 class="text-center">Sign Up for the newsletter of this restaurant</h2>
+	<br>
+	<fieldset>
+		<legend>Sign Up</legend>
+		<form name="SignUpForm" novalidate>
+			
+			<input type="text" name="firstname" placeholder="Enter first name" ng-model="signCtrl.user.firstname" required>
+			
+			<span ng-if="SignUpForm.firstname.$error.required && SignUpForm.firstname.$touched">
+				First name is required
+			</span>
+			
+			<br><br>
+			
+			<input type="text" name="lastname" placeholder="Enter last name" ng-model="signCtrl.user.lastname" required>
+			
+			<span ng-if="SignUpForm.lastname.$error.required && SignUpForm.lastname.$touched">
+				Last name is required
+			</span>
+			
+			<br><br>
+			
+			<input type="email" name="email" placeholder="Enter email address" ng-model="signCtrl.user.email" required>
+			
+			<span ng-if="SignUpForm.email.$invalid && SignUpForm.email.$touched">Must be a valid email address: handle@domain format</span>
+			
+			<br><br>
+			
+			<input type="text" name="phone" placeholder="Enter phone ###-###-####" ng-model="signCtrl.user.phone" required pattern="(\d{3})-(\d{3})-(\d{4})">
+			
+			<span ng-if="SignUpForm.phone.$invalid && SignUpForm.phone.$touched">Phone must be in the format ###-###-####</span>
+			
+			<br><br>
+			
+			<input type="text" name="favourite" placeholder="Enter menu no. of favourite dish" ng-model="signCtrl.user.favourite" ng-model-options="{updateOn: 'blur'}" required menu-number-exists>
+			
+			<span ng-if="SignUpForm.favourite.$pending.menuNumberExists">Checking if this menu number exists</span>
+			
+			<span ng-if="SignUpForm.favourite.$invalid && SignUpForm.favourite.$touched">No such menu number exists</span>
+			<!-- <span ng-if="signCtrl.invalidItem">No such menu number exists</span> -->
+			<br><br>
+			
+			<button ng-disabled="SignUpForm.$invalid || SignUpForm.$pending" ng-click="signCtrl.submit()">Submit</button>
+		</form>
+	</fieldset>
+	
+	<div ng-if="signCtrl.valid">Your information has been saved</div>
+</div>
