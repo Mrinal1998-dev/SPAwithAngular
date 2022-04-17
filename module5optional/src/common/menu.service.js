@@ -11,7 +11,13 @@ function MenuService($http, ApiPath) {
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
-      return response.data;
+        var catArray= response.data;
+        for(var i=0;i<catArray.length;i++){
+          if(catArray[i].short_name==="F"){
+             catArray[i].name="Meat";
+          }
+        }
+        return catArray;
     });
   };
 
@@ -23,7 +29,11 @@ function MenuService($http, ApiPath) {
     }
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
-      return response.data;
+         var obj =response.data;
+         if(obj.category.short_name==="F"){
+          obj.category.name="Meat";
+         }
+         return obj;
     });
   };
 

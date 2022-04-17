@@ -114,9 +114,7 @@ body {
 #testimonials p:nth-child(2) {
   margin-top: 25px;
 }
-a[ui-sref="admin.auth"] {
-  color: #fff;
-}
+
 /* END FOOTER */
 
 /********** Medium devices only **********/
